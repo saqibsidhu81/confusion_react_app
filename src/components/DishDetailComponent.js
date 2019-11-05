@@ -4,6 +4,7 @@ import {
     CardTitle, Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import ModalExample from './CommentForm';
 
 
 function RenderDish({ dish }) {
@@ -25,7 +26,7 @@ function RenderDish({ dish }) {
     }
 }
 
-function RenderComments({ dish }) {
+function RenderComments( dish ) {
     if (dish != null) {
         const comments = dish.comments.map((comment) => (
             <li key={comment.id}>
@@ -43,6 +44,7 @@ function RenderComments({ dish }) {
         )
     }
     else {
+        console.log(0);
         return (
             <div></div>
         )
@@ -69,6 +71,7 @@ const DishDetail = (props) => {
                 </div>
                 <div className="col-12 col-md-5 m-1">
                     <RenderComments comments={props.comments} />
+                    <ModalExample />
                 </div>
             </div>
         </div>
